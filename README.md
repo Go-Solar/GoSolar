@@ -1,6 +1,6 @@
 # GoSolar
 
-Description
+# Description
 GoSolar is a basic web app that provides informations such as number of components needed to build a solar system,the arrangement and rating of some components.
 GoSolar uses mathematical equations to provide such informations
 
