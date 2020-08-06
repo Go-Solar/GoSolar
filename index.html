@@ -18,28 +18,46 @@
                     <div class="col-md-4 mb-3">
                         <label>Load</label>
                         <input type="text" class="form-control" placeholder="Load" id="loaad">
+                        <small class="form-text text-muted">
+                            Your appliance name   
+                        </small>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Minimum Wattage</label>
                         <input type="number" class="form-control" placeholder="24" id="min watts">
+                        <small class="form-text text-muted">
+                             Your appliance maxium voltage
+                        </small>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Maximim Wattage</label>
                         <input type="number" class="form-control" placeholder="48" id="max watts">
+                        <small class="form-text text-muted">
+                             Your appliance inimum voltage
+                        </small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label>Quantity</label>
                         <input type="number" class="form-control" placeholder="2" id="quantity">
+                        <small class="form-text text-muted">
+                             Appliance number
+                        </small>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Usage per day</label>
                         <input type="number" class="form-control" placeholder="2hrs" id="upd">
+                        <small class="form-text text-muted">
+                             Hours you use the appliance in a day
+                        </small>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Usage per week</label>
                         <input type="number" class="form-control" placeholder="7 days" id="upw">
+                        <small class="form-text text-muted">
+                             number of days you use the appliance in a week
+                        </small>
                     </div>
                 </div>
             </form>
@@ -121,6 +139,61 @@
                     </tr>
                 </table>
             </center>
+        </section>
+
+        <section id="battery specification" class="mt-5">
+            <h3>Battery Specification</h3>
+            <form class="mt-3">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label>Average Daily Load</label>
+                        <input type="number" class="form-control" placeholder="35kw" id="daily load">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="exampleFormControlSelect1">Battery System Loss:</label>
+                        <select class="form-control" id="Inverter Efficiency">
+                      <option value="0.94" selected>0.94</option>
+                      <option value="0.92">0.92</option>
+                      <option value="0.9">0.9</option>
+                      <option value="0.80">0.80</option>
+                      <option value="0.85">0.85</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>DC load</label>
+                        <input type="number" class="form-control" placeholder="48" id="max watts">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="exampleFormControlSelect1">Inverter Voltage:</label>
+                        <select class="form-control" id="Inverter Efficiency">
+                      <option value="0.94" selected>0.94</option>
+                      <option value="0.92">0.92</option>
+                      <option value="0.9">0.9</option>
+                      <option value="0.80">0.80</option>
+                      <option value="0.85">0.85</option>
+                    </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Days of autonomy</label>
+                        <input type="number" class="form-control" placeholder="2hrs" id="upd">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Discharge Limit</label>
+                        <input type="number" class="form-control" placeholder="7 days" id="upw">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Battery Voltage</label>
+                        <input type="number" class="form-control" placeholder="7 days" id="upw">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Battery Amperage</label>
+                        <input type="number" class="form-control" placeholder="7 days" id="upw">
+                    </div>
+                </div>
+            </form>
         </section>
 
 
