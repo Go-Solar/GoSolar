@@ -70,421 +70,425 @@
             </div>
         </div>
     </header>
-    <main class="container mt-5">
-        <section id="load-calculation">
-            <h1 class="step">Step 1</h1><small>Skip this step if you know your daily load consumption or check out this link to find out how to check the wattage of your device <a href="https://www.saveonenergy.com/energy-resources/energy-consumption/" target="_blank">Click me!</a></small>
-            <h3 class="mt-4">Load Calculation</h3>
-            <form>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>Appliance</label>
-                        <input type="text" class="form-control" placeholder="Load" id="loaad">
-                        <small class="form-text text-muted">
+    <div style="background-color:rgba(3, 101, 26, 0.2);">
+        <main class=" container mt-5">
+            <section id="load-calculation">
+                <h1 class="step">Step 1</h1><small>Skip this step if you know your daily load consumption or check out this link to find out how to check the wattage of your device <a href="https://www.saveonenergy.com/energy-resources/energy-consumption/
+        " target="_blank " style="color: green;">Click me!</a></small>
+                <h3 class="mt-4">Load Calculation</h3>
+                <form>
+                    <div class="row ">
+                        <div class="col-md-4 mb-3 ">
+                            <label>Appliance</label>
+                            <input type="text" class="form-control" placeholder="Load" id="loaad">
+                            <small class="form-text text-muted ">
                             Your appliance name   
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Minimum Wattage</label>
-                        <input type="number" class="form-control" placeholder="24" id="min watts">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Minimum Wattage</label>
+                            <input type="number" class="form-control" placeholder="24" id="min watts">
+                            <small class="form-text text-muted">
                              Your appliance maxium voltage
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Maximim Wattage</label>
-                        <input type="number" class="form-control" placeholder="48" id="max watts">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Maximim Wattage</label>
+                            <input type="number" class="form-control" placeholder="48" id="max watts">
+                            <small class="form-text text-muted">
                              Your appliance minimum voltage
                         </small>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>Quantity</label>
-                        <input type="number" class="form-control" placeholder="2" id="quantity">
-                        <small class="form-text text-muted">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>Quantity</label>
+                            <input type="number" class="form-control" placeholder="2" id="quantity">
+                            <small class="form-text text-muted">
                              Number of appliance
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Usage per day</label>
-                        <input type="number" class="form-control" placeholder="2hrs" id="upd">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Usage per day</label>
+                            <input type="number" class="form-control " placeholder="2hrs" id="upd">
+                            <small class="form-text text-muted">
                              Hours you use the appliance in a day
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Usage per week</label>
-                        <input type="number" class="form-control" placeholder="7 days" id="upw">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Usage per week</label>
+                            <input type="number" class="form-control" placeholder="7 days" id="upw">
+                            <small class="form-text text-muted">
                              Number of days you use the appliance in a week
                         </small>
-                    </div>
-                </div>
-            </form>
-            <center>
-                <button type="submit" class="btn btn-primary" onclick="addHTMLTableRow();">Add Load</button>
-                <button type="submit" class="btn btn-primary" onclick="editHtmlTableSelectedRow();">Edit Load</button>
-                <button type="submit" class="btn btn-primary" onclick="removeSelectedRow();">Remove Load</button>
-
-            </center>
-            <br>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover" id="table1">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">Load</th>
-                            <th scope="col">Min Watt</th>
-                            <th scope="col">Max Watt</th>
-                            <th scope="col">Average Watt</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total Watt </th>
-                            <th scope="col">Usage per day</th>
-                            <th scope="col">Usage per Week</th>
-                            <th scope="col">Watts hour average</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table2">
-                        <tr>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary" onclick="sum(); sum2();">Submit</button>
-            <br>
-            <center>
-                <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered">
-                    <tr>
-                        <th>Total Watts : </th>
-                        <td>
-                            <h4 id="total watts"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Daily Load :</th>
-                        <td>
-                            <h4 id="daily load"></h4>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        </section>
-
-        <section id="inverter_specification" class="mt-5">
-            <h1 class="step">Step 2</h1>
-            <h3>Inverter Specification</h3>
-            <center>
-                <form class="mb-3">
-                    <div class="col-md-4 mb-3">
-                        <label>Total AC Load</label>
-                        <input type="number" class="form-control" id="total load" placeholder="24" id="min watts">
-                    </div>
-                    <b>Select load format:</b>
-                    <div class="form-check form-check-inline">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rd1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Load in Kilo-Watts</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rd2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Load in KVA</label>
                         </div>
                     </div>
                 </form>
-                <button type="submit" class="btn btn-primary" onclick="specifyInverter();">Submit</button>
-                <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered">
-                    <tr>
-                        <td>Recommended Inverter Size</td>
-                        <td>
-                            <h4 id="recommended inverter size"></h4>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        </section>
+                <center>
+                    <button type="submit" class="btn btn-primary" onclick="addHTMLTableRow();">Add Load</button>
+                    <button type="submit" class="btn btn-primary" onclick="editHtmlTableSelectedRow();">Edit Load</button>
+                    <button type="submit" class="btn btn-primary" onclick="removeSelectedRow();">Remove Load</button>
 
-        <section id="battery specification" class="mt-5">
-            <h1 class="step">Step 3</h1>
-            <h3>Battery Specification</h3>
-            <form class="mt-3 mb-3">
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>Average Daily Load</label>
-                        <input type="number" class="form-control" placeholder="35kw" id="AC average total load">
-                        <small class="form-text text-muted">
+                </center>
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="table1">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Load</th>
+                                <th scope="col">Min Watt</th>
+                                <th scope="col">Max Watt</th>
+                                <th scope="col">Average Watt</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total Watt </th>
+                                <th scope="col">Usage per day</th>
+                                <th scope="col">Usage per Week</th>
+                                <th scope="col">Watts hour average</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table2">
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" onclick="sum(); sum2();">Submit</button>
+                <br>
+                <center>
+                    <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered">
+                        <tr>
+                            <th>Total Watts : </th>
+                            <td>
+                                <h4 id="total watts"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Daily Load :</th>
+                            <td>
+                                <h4 id="daily load"></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </section>
+
+            <section id="inverter_specification" class="mt-5">
+                <h1 class="step">Step 2</h1>
+                <h3>Inverter Specification</h3>
+                <center>
+                    <form class="mb-3">
+                        <div class="col-md-4 mb-3">
+                            <label>Total AC Load</label>
+                            <input type="number" class="form-control" id="total load" placeholder="24" id="min watts">
+                        </div>
+                        <b>Select load format:</b>
+                        <div class="form-check form-check-inline">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions " id="rd1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Load in Kilo-Watts</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rd2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Load in KVA</label>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="submit" class="btn btn-primary" onclick="specifyInverter();">Submit</button>
+                    <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered">
+                        <tr>
+                            <td>Recommended Inverter Size</td>
+                            <td>
+                                <h4 id="recommended inverter size"></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </section>
+
+            <section id="battery specification" class="mt-5">
+                <h1 class="step">Step 3</h1>
+                <h3>Battery Specification</h3>
+                <form class="mt-3 mb-3">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>Average Daily Load</label>
+                            <input type="number" class="form-control" placeholder="35kw" id="AC average total load">
+                            <small class="form-text text-muted">
                              Your average power comsumption per day
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="exampleFormControlSelect1">Battery System Loss:</label>
-                        <select class="form-control" id="Inverter Efficiency">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="exampleFormControlSelect1">Battery System Loss:</label>
+                            <select class="form-control" id="Inverter Efficiency">
                       <option value="0.94" selected>0.94</option>
                       <option value="0.92">0.92</option>
                       <option value="0.9">0.9</option>
                       <option value="0.80">0.80</option>
                       <option value="0.85">0.85</option>
                     </select>
-                    </div>
+                        </div>
 
-                    <div class="col-md-4 mb-3">
-                        <label>DC load</label>
-                        <input type="number" class="form-control" placeholder="48W" id="DC average total load">
-                        <small class="form-text text-muted">
+                        <div class="col-md-4 mb-3">
+                            <label>DC load</label>
+                            <input type="number" class="form-control" placeholder="48W" id="DC average total load">
+                            <small class="form-text text-muted">
                              Your DC appliance load
                         </small>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="exampleFormControlSelect1">Inverter Voltage:</label>
-                        <select class="form-control" id="DC system voltage">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="exampleFormControlSelect1">Inverter Voltage:</label>
+                            <select class="form-control" id="DC system voltage">
                       <option value="12" selected>12V</option>
                       <option value="24">24V</option>
                       <option value="48">48V</option>
                      
                     </select>
-                        <small class="form-text text-muted">
+                            <small class="form-text text-muted">
                              Select an inverter voltage
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Days of autonomy</label>
-                        <input type="number" class="form-control" placeholder="2 days" id="Days of autonomy">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Days of autonomy</label>
+                            <input type="number" class="form-control" placeholder="2 days" id="Days of autonomy">
+                            <small class="form-text text-muted">
                              How long do you want your solar system to last with out charging it
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="exampleFormControlSelect1">Discharge Limit:</label>
-                        <select class="form-control" id="Discharge Limit">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="exampleFormControlSelect1">Discharge Limit:</label>
+                            <select class="form-control" id="Discharge Limit">
                       <option value="0.5" selected>50%</option>
                       <option value="0.6">60%</option>
                       <option value="0.7">70%</option>
                        <option value="0.8">80%</option>
                         <option value="0.9">90%</option> 
                     </select>
-                        <small class="form-text text-muted">
+                            <small class="form-text text-muted">
                              How much do you want your batteries to discharge on usage
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="exampleFormControlSelect1">Battery Voltage</label>
-                        <select class="form-control" id="Battery voltage">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="exampleFormControlSelect1">Battery Voltage</label>
+                            <select class="form-control" id="Battery voltage">
                       <option value="12" selected>12V</option>
                       <option value="24">24V</option>
                       <option value="48">48V</option>
                       
                     </select>
-                        <small class="form-text text-muted">
+                            <small class="form-text text-muted">
                              Select a battery voltage
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="exampleFormControlSelect1">Battery Current Capacity</label>
-                        <select class="form-control" id="Battery amps hr capacity">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="exampleFormControlSelect1">Battery Current Capacity</label>
+                            <select class="form-control" id="Battery amps hr capacity ">
                       <option value="100" selected>100A</option>
                        <option value="112">112A</option>
                       <option value="200">200A</option>
                       
                     </select>
-                        <small class="form-text text-muted">
+                            <small class="form-text text-muted">
                             Select a battery amperage
                         </small>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <button type="submit" class="btn btn-primary" onclick="calcuateAverageAmpHourPerDayLoad(); requiredBatteryBankCapacity();
-                            calculateBatteiesInParallel(); calculateBatteriesInSeries(); calculateTotalBatteries();
-                    ">Submit</button>
-            <center>
-                <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered" id="battery table">
-                    <tr>
-                        <th>Battery Parameters</th>
-                        <th>Rating</th>
+                </form>
+                <button type="submit" class="btn btn-primary" onclick="calcuateAverageAmpHourPerDayLoad(); requiredBatteryBankCapacity(); calculateBatteiesInParallel(); calculateBatteriesInSeries(); calculateTotalBatteries();">Submit</button>
+                <center>
+                    <table class="table-striped mt-3 mb-3 table col-md-6 table-bordered" id="battery table">
+                        <tr>
+                            <th>Battery Parameters</th>
+                            <th>Rating</th>
 
-                    </tr>
-                    <tr>
-                        <td>Average Daily Wattage</td>
-                        <td>
-                            <h4 id="average day load"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Required Battery Bank Capacity</td>
-                        <td>
-                            <h4 id="required battery bank capacity"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Number of Batteries in Parrallel</td>
-                        <td>
-                            <h4 id="batteries in parallel"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Number of Batterries in Series</td>
-                        <td>
-                            <h4 id="batteries in series"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Total Batteries Needed</td>
-                        <td>
-                            <h4 id="total batteries"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Battery Voltage</td>
-                        <td>
-                            <h4 id="battery volt"></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Battery Amperage</td>
-                        <td>
-                            <h4 id="battery amps"></h4>
-                        </td>
-                    </tr>
+                        </tr>
+                        <tr>
+                            <td>Average Daily Wattage</td>
+                            <td>
+                                <h4 id="average day load"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Required Battery Bank Capacity</td>
+                            <td>
+                                <h4 id="required battery bank capacity"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Batteries in Parrallel</td>
+                            <td>
+                                <h4 id="batteries in parallel"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Batterries in Series</td>
+                            <td>
+                                <h4 id="batteries in series"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Batteries Needed</td>
+                            <td>
+                                <h4 id="total batteries"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Battery Voltage</td>
+                            <td>
+                                <h4 id="battery volt"></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Battery Amperage</td>
+                            <td>
+                                <h4 id="battery amps"></h4>
+                            </td>
+                        </tr>
 
+                    </table>
+                </center>
+            </section>
+
+            <section id="panel_specification" class="mt-5">
+                <h1 class="step ">Step 4</h1>
+                <h3>Panel Specification</h3>
+                <h6>Select a region</h6>
+                <table id="radiation table" class="irradiance-table mb-5 table table-striped table-bordered table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Sunshine Hour</th>
+                            <th>Annual Average Radiation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Borno,Yobe,Jigawa,Kano,Kaduna,Bauchi,Gombe,Adamawa,Plateau and Katsiina</td>
+                            <td>6</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Sokoto, Zamafar, Kebbi. Niger, Abuja, Nassarawa, Taraba, Kwara, Benue</td>
+                            <td>6</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Lagos. Oyo, Osun, Ekiti, Kogi, Bemue, Rivers, Delta, Imo, Anambra, Abia, Enugu, Edo, Ondo, Bayelsa, Akwa-Ibom, Cross Rivers, Ebonyi</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
                 </table>
-            </center>
-        </section>
 
-        <section id="panel_specification" class="mt-5">
-            <h1 class="step">Step 4</h1>
-            <h3>Panel Specification</h3>
-            <h6>Select a region</h6>
-            <table id="radiation table" class="irradiance-table mb-5 table table-striped table-bordered table-hover table-responsive">
-                <thead>
-                    <tr>
-                        <th>Region</th>
-                        <th>Sunshine Hour</th>
-                        <th>Annual Average Radiation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Borno,Yobe,Jigawa,Kano,Kaduna,Bauchi,Gombe,Adamawa,Plateau and Katsiina</td>
-                        <td>6</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Sokoto, Zamafar, Kebbi. Niger, Abuja, Nassarawa, Taraba, Kwara, Benue</td>
-                        <td>6</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>Lagos. Oyo, Osun, Ekiti, Kogi, Bemue, Rivers, Delta, Imo, Anambra, Abia, Enugu, Edo, Ondo, Bayelsa, Akwa-Ibom, Cross Rivers, Ebonyi</td>
-                        <td>5</td>
-                        <td>5</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <form>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>Total Energy Demand</label>
-                        <input type="text" class="form-control" placeholder="23kw" id="total energy demand">
-                        <small class="form-text text-muted">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>Total Energy Demand</label>
+                            <input type="text " class="form-control" placeholder="23kw" id="total energy demand">
+                            <small class="form-text text-muted">
                             Your daily power cosumption 
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Peak Sun Hour Per Day</label>
-                        <input type="number" class="form-control" placeholder="6hrs" id="peck sun hours per day">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Peak Sun Hour Per Day</label>
+                            <input type="number " class="form-control" placeholder="6hrs" id="peck sun hours per day">
+                            <small class="form-text text-muted">
                              Duration of peak sun
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Solar Irradiance </label>
-                        <input type="number" class="form-control" placeholder="5" id="irradiance">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Solar Irradiance </label>
+                            <input type="number" class="form-control" placeholder="5" id="irradiance">
+                            <small class="form-text text-muted">
                              Solar irradinace of your region
                         </small>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>PV Module Guaranteed Power Output:</label>
-                        <input type="number" class="form-control" placeholder="100W" id="module power output">
-                        <small class="form-text text-muted">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>PV Module Guaranteed Power Output:</label>
+                            <input type="number" class="form-control" placeholder="100W" id="module power output">
+                            <small class="form-text text-muted">
                             Panel Output
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Battery Bus Voltage:</label>
-                        <input type="number" class="form-control" placeholder="24V" id="battery bus voltage">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Battery Bus Voltage:</label>
+                            <input type="number" class="form-control" placeholder="24V" id="battery bus voltage">
+                            <small class="form-text text-muted">
                              Battery Voltage
                         </small>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>PV Module Max Power Volatge: </label>
-                        <input type="number" class="form-control" placeholder="12V" id="max power voltage">
-                        <small class="form-text text-muted">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>PV Module Max Power Volatge: </label>
+                            <input type="number" class="form-control" placeholder="12V" id="max power voltage">
+                            <small class="form-text text-muted">
                              Panel Peak Voltage Capacity
                         </small>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <button type="submit" class="btn btn-primary" onclick="requiredArrayOutputPerDay(); numberOfModulesRequiredToMeetEnergyRequirement(); numberOfModulesRequiredPerString(); numberOfStringsInParallel(); numberModulesToBePurchased(); nominalArrayOutput();">Submit</button>
+                </form>
+                <button type="submit" class="btn btn-primary" onclick="requiredArrayOutputPerDay(); numberOfModulesRequiredToMeetEnergyRequirement(); numberOfModulesRequiredPerString(); numberOfStringsInParallel(); numberModulesToBePurchased(); nominalArrayOutput(); ">Submit</button>
 
 
+                <center>
+
+                    <table class="table-striped table table-bordered col-md-6 mt-5" id="array table">
+                        <tr>
+                            <th>Array Parameters</th>
+                            <th>Rating</th>
+
+                        </tr>
+                        <tr>
+                            <td>Required Array Output</td>
+                            <td>
+                                <h4 id="required array output"></h4>
+                            </td>
+                            <tr>
+                                <td>Number of Modules to meet Requirement</td>
+                                <td>
+                                    <h4 id="number of modules to meet requirement"></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Number of Modules per String</td>
+                                <td>
+                                    <h4 id="number of modules required per string"></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Number of Strings in Parallel</td>
+                                <td>
+                                    <h4 id="number of strings in parallel"></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Number of Modules to be Purchased</td>
+                                <td>
+                                    <h4 id="number of modules to be purchased"></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nominal Array Output</td>
+                                <td>
+                                    <h4 id="nominal array output"></h4>
+                                </td>
+                            </tr>
+
+                    </table>
+                </center>
+            </section>
             <center>
-
-                <table class="table-striped table table-bordered col-md-6 mt-5 " id="array table">
-                    <tr>
-                        <th>Array Parameters</th>
-                        <th>Rating</th>
-
-                    </tr>
-                    <tr>
-                        <td>Required Array Output</td>
-                        <td>
-                            <h4 id="required array output"></h4>
-                        </td>
-                        <tr>
-                            <td>Number of Modules to meet Requirement</td>
-                            <td>
-                                <h4 id="number of modules to meet requirement"></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Number of Modules per String</td>
-                            <td>
-                                <h4 id="number of modules required per string"></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Number of Strings in Parallel</td>
-                            <td>
-                                <h4 id="number of strings in parallel"></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Number of Modules to be Purchased</td>
-                            <td>
-                                <h4 id="number of modules to be purchased"></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nominal Array Output</td>
-                            <td>
-                                <h4 id="nominal array output"></h4>
-                            </td>
-                        </tr>
-
-                </table>
+                <button class="btn btn-primary mt-5 mb-5">Print Results</button>
             </center>
-        </section>
+            <section id="charge_controller">
 
-        <section id="charge_controller">
+            </section>
+        </main>
+    </div>
 
-        </section>
-    </main>
     <footer>
         <!-- Write footer here -->
 
@@ -499,9 +503,9 @@
                 <div>
                     <h6>Company</h6>
                     <ul>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Who we are?</a></li>
-                        <li><a href="#">What we do</a></li>
+                        <li><a href="# ">Services</a></li>
+                        <li><a href="# ">Who we are?</a></li>
+                        <li><a href="# ">What we do</a></li>
                     </ul>
                 </div>
 
