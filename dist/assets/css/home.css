@@ -386,6 +386,17 @@ footer .footer__wrapper .footer__menus__container div ul li a:hover {
 
 .btn-primary {
     background-color: #03651a !important;
+    color: white !important;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    color: white !important;
 }
 
 .fact {

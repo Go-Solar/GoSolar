@@ -1,24 +1,23 @@
-//Slick Carousel Controllers
-$(".testimonial-reel").slick({
-    centerMode: true,
-    centerPadding: "40px",
-    dots: true,
-    slidesToShow: 3,
-    infinite: true,
-    arrows: false,
-    lazyLoad: "ondemand",
-    responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                centerMode: false
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1
-            }
-        }
-    ]
-});
+// nav menu open 
+
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.mobile__menu').classList.toggle('mobile__menu--open')
+})
+
+//nav menu close 
+
+document.querySelector('.mobile__menu').addEventListener('click', (e) => {
+    let nav = document.querySelector('.mobile__menu nav');
+    let greyArea = document.querySelector('.mobile__menu');
+
+    if (e.target == greyArea) {
+        nav.classList.add('nav--close');
+        document.querySelector('.mobile__menu').classList.add('mobile__menu--close');
+
+        setTimeout(() => {
+            nav.classList.remove('nav--close')
+            document.querySelector('.mobile__menu').classList.toggle('mobile__menu--open');
+            document.querySelector('.mobile__menu').classList.remove('mobile__menu--close');
+        }, 1000);
+    }
+})

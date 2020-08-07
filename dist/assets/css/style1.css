@@ -877,6 +877,7 @@ img {
 .welcome-content h3 {
     font-size: 54px;
     color: black;
+    font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.3;
     text-align: center;
